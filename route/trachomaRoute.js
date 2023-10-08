@@ -1,6 +1,6 @@
 import express from 'express';
 import multer from 'multer';
-import { createTrachoma, getAllTrachomas, getTrachoma } from '../controller/trachomaController.js';
+import { createTrachoma, deleteTrachoma, getAllTrachomas, getTrachoma } from '../controller/trachomaController.js';
 
 const router = express.Router();
 
@@ -24,5 +24,7 @@ router.get('/', getAllTrachomas);
 
 // Get a single Trachoma record by ID
 router.get('/:id', getTrachoma);
+
+router.delete('/:id', deleteTrachoma);
 
 export default router;
